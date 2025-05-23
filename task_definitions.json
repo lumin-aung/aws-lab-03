@@ -8,15 +8,15 @@
       "cpu": 256,
       "memory": 512,
       "essential": true,
-      "workingDirectory": "/usr/src/app",
+      "workingDirectory": "/app",
       "mountPoints": [],
       "readonlyRootFilesystem": true,
       "portMappings": [
         {
-          "name": "#APP_NAME-5010-tcp",
-          "hostPort": 5010,
+          "name": "#APP_NAME",
+          "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 5010
+          "containerPort": 80
         }
       ],
       "logConfiguration": {
