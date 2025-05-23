@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    IMAGE_REPO_NAME: my-python-app
+    IMAGE_REPO_NAME: legend-simple-app
     CONTAINER_NAME: app-container
 
 phases:
