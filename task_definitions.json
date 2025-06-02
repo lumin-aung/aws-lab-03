@@ -1,0 +1,40 @@
+{
+  "executionRoleArn": "arn:aws:iam::413484927191:role/ecs-task-exec-role",
+  "taskRoleArn": "arn:aws:iam::413484927191:role/ecs-task-exec-role",
+  "containerDefinitions": [
+    {
+      "name": "main",
+      "image": "413484927191.dkr.ecr.us-east-1.amazonaws.com/legend-simple-app",
+      "cpu": 256,
+      "memory": 512,
+      "essential": true,
+      "workingDirectory": "/app",
+      "mountPoints": [],
+      "readonlyRootFilesystem": true,
+      "portMappings": [
+        {
+          "name": "#APP_NAME",
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/aws/ecs/legend-simple-app/main",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "family": "legend-simple-app",
+  "cpu": "256",
+  "memory": "512",
+  "volume": []
+}
