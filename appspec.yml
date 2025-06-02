@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "legend-simple-app"
+        TaskDefinition: legend-simple-app
         LoadBalancerInfo:
-          ContainerName: "app-container"
+          ContainerName: "main"
           ContainerPort: 80
