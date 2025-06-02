@@ -1,10 +1,10 @@
 {
-  "executionRoleArn": "arn:aws:iam::#AWS_ACCOUNT_ID:role/#ROLE_NAME",
-  "taskRoleArn": "arn:aws:iam::#AWS_ACCOUNT_ID:role/#ROLE_NAME",
+  "executionRoleArn": "arn:aws:iam::413484927191:role/ecs-task-exec-role",
+  "taskRoleArn": "arn:aws:iam::413484927191:role/ecs-task-exec-role",
   "containerDefinitions": [
     {
       "name": "main",
-      "image": "#IMAGE_URI",
+      "image": "413484927191.dkr.ecr.us-east-1.amazonaws.com/legend-simple-app",
       "cpu": 256,
       "memory": 512,
       "essential": true,
@@ -22,8 +22,8 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/aws/ecs/#APP_NAME/main",
-          "awslogs-region": "#REGION",
+          "awslogs-group": "/aws/ecs/legend-simple-app/main",
+          "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
       }
@@ -33,7 +33,7 @@
     "FARGATE"
   ],
   "networkMode": "awsvpc",
-  "family": "#APP_NAME",
+  "family": "legend-simple-app",
   "cpu": "256",
   "memory": "512",
   "volume": []
