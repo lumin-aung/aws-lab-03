@@ -1,9 +1,9 @@
-version: 0.0
+version: 1
 Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: <TASK_DEFINITION>
+        TaskDefinition: imagedefinitions.json
         LoadBalancerInfo:
           ContainerName: "main"
           ContainerPort: 80
